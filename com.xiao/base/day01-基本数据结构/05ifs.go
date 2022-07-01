@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"io/ioutil"
+)
 
 func main() {
 	bool1 := true
@@ -64,4 +67,21 @@ func main() {
 		}
 		fmt.Println("--")
 	}
+
+
+	//if 初始化表达式; 条件表达式 用法
+
+
+		//if i:=18;i==10{
+		//	fmt.Println("i == 10")
+		//}else {
+		//	fmt.Println("i 不等于10,i的值为：",i)
+		//}
+	   //初始化条件，查找文件，
+	   //判断表达式，根据传入的条件，如果存在的不为nil
+      if res,err:=ioutil.ReadFile("a.txt");err!=nil{
+		fmt.Println(err)
+	  }else {
+	  	fmt.Println(string(res))
+	  }
 }

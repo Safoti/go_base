@@ -52,5 +52,31 @@ func main() {
 	for _ ,value := range capitals {
 		fmt.Println("Map item: Capital value", value)
 	}
-	
+
+
+	employeeSalary := 	map[string]int{
+		"steve": 12000,
+		"jamie": 15000,
+		"mike": 9000,
+	}
+
+	newEmp:="jamie"
+	/**
+	value, ok := employeeSalary[newEmp]
+	    if ok == true {
+	        fmt.Println("Salary of", newEmp, "is", value)
+	        return
+	    }
+	 使用下边的进行替换
+	 */
+	if vals,ok:=employeeSalary[newEmp];ok{
+		fmt.Println("Salary of", newEmp, "is", vals)
+		return
+	}
+	fmt.Println(newEmp,"not found")
+
+
+	//元素的删除
+	delete(employeeSalary, "steve")
+	fmt.Println("map after deletion", employeeSalary)
 }
