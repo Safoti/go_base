@@ -12,6 +12,27 @@ func main() {
 	fmt.Printf("The minimum in the slice is: %d", x)
 
 	a()
+
+	//匿名函数
+	value:= func() {
+		fmt.Println("测试 匿名函数")
+	}
+	value()
+
+	//匿名函数传递参数  并且自调用
+	func(ele string){
+		fmt.Println(ele)
+	}("lktbz")
+
+
+	//函数当参数传递调用
+	vas :=func(p,q string)string{  //自定义函数
+		return  p+q+"LK"
+	}
+	LKL(vas)
+	//函数当返回值使用
+	sd := GFG()
+	fmt.Println(sd("Welcome ", "to "))
 }
 /**
   传递的可变参数比较大小，找出最小的数并返回
@@ -37,3 +58,20 @@ func a() {
 	fmt.Println(i)
 	return
 }
+//函数当做参数传递
+//传递匿名函数， 函数传入p,q 字符串并且返回一个字符串
+func LKL(i func(p,q string)string){
+	fmt.Println(i ("lks", "for"))
+}
+
+//函数返回另一个函数
+//                   返回值类型 func(i,j string)string
+func  GFG()func(i,j string)string  {
+	//运算会返回的值
+	myf:= func(i,j string)string {
+		 return i + j + "lktbz"
+	}
+	//返回
+	return myf
+}
+
