@@ -5,8 +5,8 @@ import "fmt"
 /**
    recover  恢复中断的程序
  */
-func fullNames(first *string,last *string){
-	defer recoverFullName() //defer 激活
+func fullNamesss(first *string,last *string){
+	defer recoverFullNames() //defer 激活
 	if first ==nil{
 		panic("runtime error: first name cannot be nil")
 	}
@@ -17,7 +17,7 @@ func fullNames(first *string,last *string){
 	fmt.Println("returned normally from fullName")
 }
 
-func recoverFullName() {
+func recoverFullNames() {
 	if r := recover(); r!= nil {
 		fmt.Println("recovered from ", r)
 	}
@@ -28,7 +28,7 @@ func main() {
 	 */
 	defer fmt.Println("deferred call in main")
 	firstName := "Elon"
-	fullNames(&firstName, nil)
+	fullNamesss(&firstName, nil)
 	fmt.Println("returned normally from main")
 
 
