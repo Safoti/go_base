@@ -1,0 +1,13 @@
+/**
+  当使用的message 在别的 地方已经使用了怎么办嘛
+   解决办法就是直接引用
+ */
+
+
+syntax="proto3";
+import "04usetomessage.proto"; //导入没效果很是尴尬
+
+message textContext{
+    SearchResponse res=1;
+    string name=2;
+}

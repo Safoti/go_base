@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package=".;profile";
+
+message HelloWorld{
+  string  name=1;
+  int32 age=2;
+  double fee=3;
+  bool isLogin=4;
+}
+
+
+

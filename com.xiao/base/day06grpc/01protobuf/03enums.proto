@@ -1,0 +1,28 @@
+syntax="proto3";
+
+
+message SearchRequest {
+   string query=1;
+   int32  page_number=2;
+  int32 result_per_page = 3;
+  //定义枚举类型
+  enum Corpus{
+    UNIVERSAL = 0;  //枚举必须从0开始
+    WEB = 1;
+    IMAGES = 2;
+    LOCAL = 3;
+    NEWS = 4;
+    PRODUCTS = 5;
+    VIDEO = 6;
+  }
+//  enum Foo {
+//    reserved 2, 15, 9 to 11, 40 to max;
+//    reserved "FOO", "BAR";  、、移除
+//  }
+  //使用枚举数据
+  Corpus corpus = 4;
+
+
+
+
+}

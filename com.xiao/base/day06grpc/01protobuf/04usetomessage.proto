@@ -1,0 +1,15 @@
+/**
+
+ 使用其他的message
+ */
+
+syntax="proto3";
+
+message Result{
+  string url = 1;
+  string title = 2;
+}
+
+message SearchResponse{
+  repeated Result results = 1; //引用Result
+}

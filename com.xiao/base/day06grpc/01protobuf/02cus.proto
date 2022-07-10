@@ -1,0 +1,21 @@
+
+//定义使用的是 proto3 的协议
+syntax = "proto3";
+/**
+    官方网址
+    https://developers.google.com/protocol-buffers/docs/proto3
+ */
+message SearchRequest {
+  //string 数据类型  name  编号 编号是在二进制传输过程中，方便标识字段  编号最大到15
+  string query = 1;
+  int32 page_number = 2;
+  int32 result_per_page = 3;
+
+}
+
+//一个proto 文件可以创建多个message
+message SearchResponse{
+  int32  code =1;
+  string message=2;
+}
+
