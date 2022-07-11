@@ -59,8 +59,9 @@ func main() {
 		"jamie": 15000,
 		"mike": 9000,
 	}
-
+	employeeSalary["gogo"]=9999
 	newEmp:="jamie"
+	fmt.Println(employeeSalary)
 	/**
 	value, ok := employeeSalary[newEmp]
 	    if ok == true {
