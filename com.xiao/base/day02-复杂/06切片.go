@@ -114,4 +114,35 @@ func main() {
 	}
 
 
+	var runes[] string
+	for _, rss := range "hello world" {
+		runes=append(runes, string(rss))
+	}
+	fmt.Printf("%q\n",runes)
+	//切片的删除
+	seq:=[]string{"z","d","f","h","g"}
+	fmt.Println("删除前的值为：",seq)
+	//准备删除元素 删除第二个元素
+	//seq=append(seq[:1],seq[2:]...) //将z 与fhg 重新排列成新的切片
+	//fmt.Println("删除后的值为：",seq)
+	seq=removes(seq,2)
+	fmt.Println("删除后的元素为：",seq)
+
+
+
+//   切片练习  [:]  :前代表着切片的len  :后代表着切片的容量
+     swa:=[]int{1,2,3,4,5,6,7,8,9}
+    fmt.Println("swa[:]打印结果为：",swa[:])
+    fmt.Println("swa[2:]打印结果为：",swa[2:])
+	fmt.Println("swa[:3]打印结果为：",swa[:3])
+	fmt.Println("swa[:5]打印结果为：",swa[:5])
+    fmt.Println("swa[0:1]打印结果为：",swa[0:1])
+    fmt.Println("swa[0:3]打印结果为：",swa[0:3])
+
+
+
+}
+func removes(s[]string,i int)[]string{
+	copy(s[i:],s[i+1:])
+	return s[:len(s)-1]
 }
