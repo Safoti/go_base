@@ -1,16 +1,32 @@
 package main
 
-import "github.com/kataras/iris/v12"
+import (
+	"errors"
+	"fmt"
+	"net/http"
+)
 
 /**
  * @Author safoti
  * @Date Created in 2022/7/15
- * @Description   模拟一个服务方便接收与返回信息
+ * @Description    服务器端请求
  **/
 func main() {
-    app:= iris.New()
-    app.Post("/test", func(ctx iris.Context) {
-		  ctx.WriteString("我是服务端，我正在返回信息")
-	})
-    app.Listen(":8090")
+	http.HandleFunc("/", getRoots)
+	err := http.ListenAndServe(":9999", nil)
+	if err != nil {
+		errors.New("失败了")
+	}
+}
+func getRoots(w http.ResponseWriter, r *http.Request) {
+	ms := r.Method
+	hosts := r.URL.Host
+	paths := r.URL.Path
+	fmt.Println(r.URL.Port())
+	fmt.Println(ms)
+	fmt.Println(hosts)
+	fmt.Println(paths)
+
+	//fmt.Printf("got / request\n")
+	//io.WriteString(w, "This is my website!\n")
 }
