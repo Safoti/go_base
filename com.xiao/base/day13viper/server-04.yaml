@@ -1,0 +1,11 @@
+age: 99
+class:
+    class01: "01"
+    class02: "02"
+hobbies:
+    - Coding
+    - Movie
+    - Swimming
+name:
+    first: panda
+    last: 8z

@@ -7,7 +7,7 @@ import (
 )
 
 /**
-   使用官方
+   使用官方   将错误信息返回给调用者
  */
 func circleArea(radius float64)(float64,error){
 	if radius <0{

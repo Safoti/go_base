@@ -50,6 +50,7 @@ func main() {
 	//tandfy1:=reflect.TypeOf(1)
 	//fmt.Println(tandfy)
 	//fmt.Println(tandfy1)
+
 	cd:=[]ClassDemo{
 		{	CName: "数学",
 			CPath: "3年2班"},{
