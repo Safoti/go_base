@@ -8,8 +8,9 @@ import (
 /**
  * @Author safoti
  * @Date Created in 2022/7/26
- * @Description
+ * @Description      数据转换成结构体
  **/
+
 func main() {
 	dumpData(PeopleData)
 

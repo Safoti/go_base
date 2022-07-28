@@ -5,7 +5,6 @@ import (
 	"reflect"
 	"strconv"
 )
-
 /**
  * @Author safoti
  * @Date Created in 2022/7/26
@@ -13,13 +12,11 @@ import (
  **/
 func main() {
 	dumpData(PeopleData)
-
 	for _, row := range PeopleData {
 		s1 := dataToStruct7(row)
 		fmt.Printf("%v\n", s1)
 	}
 }
-
 func dataToStruct7(data []TableField) (strt interface{}) {
 	// number of fields required
 	fields := make([]reflect.StructField, len(data))
@@ -39,10 +36,8 @@ func dataToStruct7(data []TableField) (strt interface{}) {
 		}
 		fields[i].Type = t
 	}
-
 	typ := reflect.StructOf(fields)
 	v := reflect.New(typ).Elem()
-
 	for i, tf := range data {
 		switch tf.Type {
 		case "int":
@@ -58,7 +53,6 @@ func dataToStruct7(data []TableField) (strt interface{}) {
 			v.Field(i).SetFloat(tv)
 		}
 	}
-
 	s := v.Addr().Interface()
 	return s
 }

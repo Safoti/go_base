@@ -6,7 +6,6 @@ package main
  * @Description
  **/
 type (
-
 	// TableField describe a RDBMS table field's value
 	TableField struct {
 		Name  string // ex: Lname, Fname, Age, etc.

@@ -20,12 +20,9 @@ func dataToStructs(data []TableField) interface{} {
 	var structFields []reflect.StructField
 	// number of struct fields required
 	structFields = make([]reflect.StructField, len(data))
-
 	var t reflect.Type
-
 	for i, tf := range data {
 		structFields[i].Name = tf.Name
-
 		switch tf.Type {
 		case "int":
 			t = reflect.TypeOf(int(0))
@@ -38,7 +35,6 @@ func dataToStructs(data []TableField) interface{} {
 		}
 		structFields[i].Type = t
 	}
-
 	typ := reflect.StructOf(structFields)
 	v := reflect.New(typ).Elem()
 	s := v.Addr().Interface()
